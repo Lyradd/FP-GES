@@ -14,7 +14,7 @@ Repositori ini merupakan proyek tugas akhir (Final Project) yang dikembangkan ol
 
 ## Deskripsi Proyek
 
-FP-GES adalah singkatan dari Final Project - [nama/topik game visual novel]. Proyek ini dibuat untuk memenuhi tugas akhir pada [Nama Mata Kuliah, Institusi]. Game ini bertujuan untuk [jelaskan tujuan dan kegunaan game secara ringkas, misal: memberikan pengalaman interaktif berbasis cerita dengan multimedia].
+FP-GES adalah singkatan dari Final Project - The Librarians Path. Proyek ini dibuat untuk memenuhi tugas akhir pada Game Edukasi & Simulasi. Game ini bertujuan untuk memberikan pengalaman interaktif berbasis cerita dengan multimedia.
 
 ## Fitur
 
