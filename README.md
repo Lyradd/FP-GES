@@ -1,6 +1,6 @@
 # FP-GES
 
-Repositori ini merupakan proyek tugas akhir (Final Project) yang dikembangkan oleh tim pada mata kuliah tertentu. Proyek ini menggunakan bahasa pemrograman Python dan mungkin juga melibatkan teknologi atau pustaka lain yang berkaitan.
+Repositori ini merupakan proyek tugas akhir (Final Project) yang dikembangkan oleh tim pada mata kuliah Game Edukasi dan Simulasi. Proyek ini dibuat menggunakan Ren'Py, sebuah engine visual novel berbasis Python, dengan struktur direktori yang dioptimalkan untuk pengembangan game visual novel.
 
 ## Daftar Isi
 
@@ -14,19 +14,20 @@ Repositori ini merupakan proyek tugas akhir (Final Project) yang dikembangkan ol
 
 ## Deskripsi Proyek
 
-FP-GES adalah singkatan dari Final Project - [nama atau topik proyek] (**Silakan lengkapi bagian ini sesuai dengan deskripsi proyek Anda**). Proyek ini dibuat untuk memenuhi tugas akhir pada [Nama Mata Kuliah, Institusi]. Proyek ini bertujuan untuk [jelaskan tujuan dan kegunaan proyek ini secara ringkas].
+FP-GES adalah singkatan dari Final Project - [nama/topik game visual novel]. Proyek ini dibuat untuk memenuhi tugas akhir pada [Nama Mata Kuliah, Institusi]. Game ini bertujuan untuk [jelaskan tujuan dan kegunaan game secara ringkas, misal: memberikan pengalaman interaktif berbasis cerita dengan multimedia].
 
 ## Fitur
 
-- [Fitur 1] – Penjelasan singkat
-- [Fitur 2] – Penjelasan singkat
-- [Fitur 3] – Penjelasan singkat
+- Cerita visual interaktif berbasis Ren'Py.
+- Audio latar dan efek suara mendukung suasana permainan.
+- Berbagai pilihan menu dan opsi yang mempengaruhi alur cerita.
+- Sistem penyimpanan (save) dan pemuatan (load) progress pemain.
 
-**Silakan tambahkan atau ubah fitur sesuai dengan proyek Anda.**
+**Silakan tambah atau ubah fitur sesuai kebutuhan proyek Anda.**
 
 ## Instalasi
 
-Pastikan Anda sudah menginstal Python versi 3.x.
+Pastikan sudah menginstal [Ren'Py](https://www.renpy.org/) versi terbaru.
 
 1. Clone repositori ini:
    ```bash
@@ -34,38 +35,44 @@ Pastikan Anda sudah menginstal Python versi 3.x.
    cd FP-GES
    ```
 
-2. (Opsional) Buat dan aktifkan virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Linux/Mac
-   .\venv\Scripts\activate   # Windows
-   ```
-
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+2. Jalankan Ren'Py dan buka folder proyek ini untuk memulai pengembangan atau menjalankan game.
 
 ## Penggunaan
 
-Jalankan script utama atau aplikasi dengan perintah berikut:
-```bash
-python main.py
-```
-**Ganti `main.py` dengan nama file utama proyek Anda jika berbeda.**
+- Buka Ren'Py, impor folder `FP-GES` sebagai proyek baru.
+- Klik "Launch Project" pada Ren'Py Launcher untuk menjalankan game.
+- Untuk mengedit cerita atau aset, ubah file yang ada di dalam folder `game`.
 
 ## Struktur Direktori
 
-```
-FP-GES/
-├── src/                # Kode sumber utama
-├── data/               # Dataset atau file data
-├── docs/               # Dokumentasi tambahan
-├── requirements.txt    # Daftar dependencies Python
-├── README.md           # Dokumentasi ini
-└── ...
-```
-**Struktur direktori dapat diubah sesuai dengan struktur aktual repositori Anda.**
+Struktur direktori utama proyek ini adalah sebagai berikut:
+
+![image1](image1)
+
+Penjelasan struktur:
+- `.vscode/`           : Konfigurasi editor (opsional).
+- `game/`              : Folder utama aset dan script game.
+  - `audio/`           : Menyimpan file audio seperti musik dan efek suara.
+  - `fonts/`           : Menyimpan file font (jika ada).
+  - `gui/`             : Komponen antarmuka pengguna.
+  - `images/`          : Menyimpan gambar dan sprite.
+  - `saves/`           : Data penyimpanan progress pemain.
+  - `tl/`              : Untuk terjemahan atau localization (optional).
+  - `custom_screens.rpy` : Script custom untuk layar-layar tambahan.
+  - `definitions.rpy`    : Definisi variabel dan data global.
+  - `gui.rpy`            : Script pengaturan GUI.
+  - `images.rpy`         : Script pengaturan gambar.
+  - `options.rpy`        : Konfigurasi pengaturan game.
+  - `screens.rpy`        : Definisi tampilan layar custom.
+  - `script.rpy`         : Script utama cerita visual novel.
+- `errors.txt`, `log.txt`, `traceback.txt` : File log dan error untuk debugging.
+
+## Kontributor
+
+- [Nama Kontributor 1](https://github.com/username1)
+- [Nama Kontributor 2](https://github.com/username2)
+- [Nama Kontributor 3](https://github.com/username3)
+
 
 ---
 
