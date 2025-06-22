@@ -43,7 +43,7 @@ default reputation = 40
 default happiness = 50
 default energy = 100
 default books = 20
-default cash = 100000
+default cash = 1000000
 default player_name = ""
 default current_location = "perpustakaan"
 
@@ -65,7 +65,7 @@ default tables_upgraded = False
 default daily_donation = 0
 
 # Variabel Pengunjung
-default student1_state = "browsing"
+default student1_state = "Browse"
 default student2_state = "reading"
 default teacher_state = "researching"
 default child_state = "storytime"
@@ -778,30 +778,65 @@ label help_visitors:
                 "Siswa Lain" "Terima kasih! Sekarang saya bisa mengerjakan tugas."
             "Coba cari di katalog komputer dulu.":
                 player "Coba cari di katalog komputer dulu."
-                $ student2_state = "browsing"
+                $ student2_state = "Browse"
                 $ happiness = max(happiness - 3, 0)
                 $ reputation = max(reputation - 2, 0)
                 "Siswa Lain" "Oh, baiklah. Saya akan coba."
         hide student2 with moveoutright
-
     jump daily_routine
 
+# PERBAIKAN: Mengembalikan menu pilihan
 label organize_books:
     hide screen library_actions
     $ organize_books_done_today = True
     scene bg library shelves with dissolve
     player "Aku harus merapikan beberapa buku hari ini."
-    $ reputation = min(reputation + 3, 100)
+    menu:
+        "Buku Fiksi":
+            if fiction_condition == "fair":
+                player "Beberapa buku fiksi mulai rusak. Aku akan memperbaikinya."
+                $ fiction_condition = "good"
+                $ reputation = min(reputation + 2, 100)
+            else:
+                player "Buku fiksi sudah dalam kondisi baik."
+        "Buku Sains":
+            if science_condition == "fair":
+                player "Beberapa buku sains perlu diperbaiki. Aku akan merawatnya."
+                $ science_condition = "good"
+                $ reputation = min(reputation + 2, 100)
+            else:
+                player "Buku sains masih dalam kondisi bagus."
+        "Buku Sejarah":
+            if history_condition == "fair":
+                player "Buku sejarah perlu sedikit perhatian. Aku akan merapikannya."
+                $ history_condition = "good"
+                $ reputation = min(reputation + 2, 100)
+            else:
+                player "Buku sejarah masih terawat dengan baik."
+    scene bg rak with dissolve
     player "Aku sudah merapikan buku-buku hari ini. Perpustakaan terlihat lebih rapi sekarang."
     jump daily_routine
 
+# PERBAIKAN: Mengembalikan menu pilihan
 label education_program:
     hide screen library_actions
     $ education_program_done_today = True
     scene bg library event with dissolve
     player "Aku akan mengadakan program edukasi hari ini."
-    $ happiness = min(happiness + 8, 100)
-    $ reputation = min(reputation + 5, 100)
+    menu:
+        "Literasi Digital":
+            player "Mengajarkan literasi digital kepada pengunjung."
+            $ reputation = min(reputation + 5, 100)
+            "Warga" "Workshop ini sangat bermanfaat!"
+        "Story Time untuk Anak":
+            player "Membacakan cerita untuk anak-anak."
+            $ happiness = min(happiness + 7, 100)
+            "Anak-anak" "Ceritanya seru! Aku mau datang lagi besok!"
+        "Diskusi Buku":
+            player "Memimpin diskusi buku untuk remaja dan dewasa."
+            $ reputation = min(reputation + 3, 100)
+            $ happiness = min(happiness + 5, 100)
+            "Peserta" "Diskusi hari ini sangat menarik!"
     jump daily_routine
 
 label daily_report:
@@ -913,7 +948,6 @@ label victory:
     
     "Setelah berbulan-bulan bekerja keras, perpustakaan kecil itu kini bersinar kembali..."
 
-    # PERBAIKAN: Menampilkan gambar Pak Amin
     show pak_amin at right with dissolve
     "Kepala Desa, Pak Amin, datang memberikan pidato."
     "Pak Amin" "Atas nama Desa Welasari, saya menyatakan perpustakaan ini sebagai pusat literasi terbaik! Kami mengalokasikan dana tambahan Rp5.000.000."
@@ -942,7 +976,6 @@ label victory:
     pause 2.0
     hide screen good_ending_screen with dissolve
 
-    # PERBAIKAN: Menampilkan statistik akhir sebelum kembali ke menu
     "Statistik Akhir Permainan:"
     "Total Hari Bermain: [day]"
     "Reputasi Akhir: [reputation] / 100"
@@ -951,7 +984,6 @@ label victory:
     "Sisa Kas: Rp[cash:,]"
     "Terima kasih telah bermain!"
     
-    # PERBAIKAN: Kembali ke Main Menu
     $ renpy.full_restart()
     return
 
@@ -971,7 +1003,6 @@ label game_over:
     kakek "Mungkin ini bukan jalan yang tepat untukmu, Nak."
     hide kakek sad with dissolve
 
-    # PERBAIKAN: Menampilkan statistik akhir sebelum kembali ke menu
     "Statistik Akhir Permainan:"
     "Total Hari Bermain: [day]"
     "Reputasi Akhir: [reputation] / 100"
@@ -982,7 +1013,6 @@ label game_over:
 
     pause
 
-    # PERBAIKAN: Kembali ke Main Menu
     $ renpy.full_restart()
     return
 
