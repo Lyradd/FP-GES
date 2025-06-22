@@ -47,7 +47,7 @@ Pastikan sudah menginstal [Ren'Py](https://www.renpy.org/) versi terbaru.
 
 Struktur direktori utama proyek ini adalah sebagai berikut:
 
-![image1](image1)
+![image](https://github.com/user-attachments/assets/fe114808-63f4-453d-a23e-f1a9a18312ce)
 
 Penjelasan struktur:
 - `.vscode/`           : Konfigurasi editor (opsional).
