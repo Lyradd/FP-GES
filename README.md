@@ -69,11 +69,7 @@ Penjelasan struktur:
 
 ## Kontributor
 
-- [Nama Kontributor 1](https://github.com/username1)
-- [Nama Kontributor 2](https://github.com/username2)
-- [Nama Kontributor 3](https://github.com/username3)
-
+- [Made Daryl Adi Nugraha](https://github.com/Lyradd)
+- [Muhammad Danis Hadriansyah](https://github.com/danishadriansyah)
 
 ---
-
-> _Silakan lengkapi bagian yang masih kosong atau sesuaikan dengan kebutuhan proyek Anda._
